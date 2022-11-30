@@ -155,38 +155,86 @@ namespace Trinh_duyet
         //    np = null;
         //}
 
+        void CloseCurrentTab()
+        {
+            if (tabControl.TabPages.Count == 1)
+            {
+                //tabControl.TabPages.Clear();
+                tabControl.TabPages.RemoveAt(tabControl.SelectedIndex);
+                newTab();
+            }
+            else
+            {
+                tabControl.TabPages.RemoveAt(tabControl.SelectedIndex);
+
+            }
+
+        }
+
+        void newTab()
+        {
+            var selectedTab = tabControl.SelectedTab;
+            var tab = new TabPage();
+            var browser1 = new WebBrowser();
+            //LinkedList<string> url_List1 = new LinkedList<string>();
+            //var toolstrip = new System.Windows.Forms.ToolStrip();
+            tab.Text = "Add";
+            //toolstrip.Items = toolStrip1;
+
+            // add tab to tabcontrol
+            tabControl.TabPages.Add(tab);
+            tabControl.SelectedTab = tab;
+            //tab.Name = "Add";
+
+            selectedTab.Text = "New Tab";
+            selectedTab.Tag = tabControl.SelectedIndex;
+            //Console.WriteLine(tabControl.SelectedIndex);
+            //toolstrip.Parent = selectedTab;
+
+
+
+            browser1.Parent = selectedTab;
+            browser1.Dock = DockStyle.Fill;
+            browser1.Name = "webBrowser1";
+            browser1.ScriptErrorsSuppressed = true;
+            browser1.Navigate("https://www.google.com");
+            browser1.Navigated += new System.Windows.Forms.WebBrowserNavigatedEventHandler(this.webBrowser1_Navigated);
+            toolStrip1.Parent = selectedTab;
+        }
+
         private void tabControl_Click(object sender, EventArgs e)
         {
             getUrl = true;
             var selectedTab = tabControl.SelectedTab;
             if (selectedTab.Text == "Add")
             {
-                var tab = new TabPage();
-                var browser1 = new WebBrowser();
-                //LinkedList<string> url_List1 = new LinkedList<string>();
-                //var toolstrip = new System.Windows.Forms.ToolStrip();
-                tab.Text = "Add";
-                //toolstrip.Items = toolStrip1;
+                //var tab = new tabpage();
+                //var browser1 = new webbrowser();
+                //linkedlist<string> url_list1 = new linkedlist<string>();
+                //var toolstrip = new system.windows.forms.toolstrip();
+                //tab.text = "add";
+                //toolstrip.items = toolstrip1;
 
-                // add tab to tabcontrol
-                tabControl.TabPages.Add(tab);
-                tabControl.SelectedTab = tab;
-                //tab.Name = "Add";
+                //add tab to tabcontrol
+                //tabcontrol.tabpages.add(tab);
+                //tabcontrol.selectedtab = tab;
+                //tab.name = "add";
 
-                selectedTab.Text = "New Tab";
-                selectedTab.Tag = tabControl.SelectedIndex;
-                //Console.WriteLine(tabControl.SelectedIndex);
-                //toolstrip.Parent = selectedTab;
+                //selectedtab.text = "new tab";
+                //selectedtab.tag = tabcontrol.selectedindex;
+                //console.writeline(tabcontrol.selectedindex);
+                //toolstrip.parent = selectedtab;
 
-                
 
-                browser1.Parent = selectedTab;
-                browser1.Dock = DockStyle.Fill;
-                browser1.Name = "webBrowser1";
-                browser1.ScriptErrorsSuppressed = true;
-                browser1.Navigate("https://www.google.com");
-                browser1.Navigated += new System.Windows.Forms.WebBrowserNavigatedEventHandler(this.webBrowser1_Navigated);
-                toolStrip1.Parent = selectedTab;
+
+                //browser1.parent = selectedtab;
+                //browser1.dock = dockstyle.fill;
+                //browser1.name = "webbrowser1";
+                //browser1.scripterrorssuppressed = true;
+                //browser1.navigate("https://www.google.com");
+                //browser1.navigated += new system.windows.forms.webbrowsernavigatedeventhandler(this.webbrowser1_navigated);
+                //toolstrip1.parent = selectedtab;
+                newTab();
             }
             toolStrip1.Parent = selectedTab;
 
@@ -277,6 +325,7 @@ namespace Trinh_duyet
                 var selected = tabControl.SelectedTab;
                 url_List.AddLast(selected.Tag + " " + url);
                 tbxUrl.Text = url;
+                selected.Text = web.Document.Title;
             }
         }
 
@@ -298,6 +347,13 @@ namespace Trinh_duyet
         {
             WebBrowser web = GetCurrentBrowser();
             web.Navigate("https://www.google.com");
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            CloseCurrentTab();
+            var selected = tabControl.SelectedTab;
+            toolStrip1.Parent = selected;
         }
     }
 }

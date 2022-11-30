@@ -1,0 +1,10 @@
+D:\HK1-2022-2023\CTDL&GT\Trinh_duyet\bin\Debug\Trinh_duyet.exe.config
+D:\HK1-2022-2023\CTDL&GT\Trinh_duyet\bin\Debug\Trinh_duyet.exe
+D:\HK1-2022-2023\CTDL&GT\Trinh_duyet\bin\Debug\Trinh_duyet.pdb
+D:\HK1-2022-2023\CTDL&GT\Trinh_duyet\obj\Debug\Trinh_duyet.csprojAssemblyReference.cache
+D:\HK1-2022-2023\CTDL&GT\Trinh_duyet\obj\Debug\Trinh_duyet.Form1.resources
+D:\HK1-2022-2023\CTDL&GT\Trinh_duyet\obj\Debug\Trinh_duyet.Properties.Resources.resources
+D:\HK1-2022-2023\CTDL&GT\Trinh_duyet\obj\Debug\Trinh_duyet.csproj.GenerateResource.cache
+D:\HK1-2022-2023\CTDL&GT\Trinh_duyet\obj\Debug\Trinh_duyet.csproj.CoreCompileInputs.cache
+D:\HK1-2022-2023\CTDL&GT\Trinh_duyet\obj\Debug\Trinh_duyet.exe
+D:\HK1-2022-2023\CTDL&GT\Trinh_duyet\obj\Debug\Trinh_duyet.pdb

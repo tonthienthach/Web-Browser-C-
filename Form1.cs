@@ -8,19 +8,23 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Trinh_duyet.Linked_List;
 
 namespace Trinh_duyet
 {
     public partial class Form1 : Form
     {
-        
+
         public Form1()
         {
             InitializeComponent();
             webBrowser1.ScriptErrorsSuppressed = true;
         }
 
-        LinkedList<string> url_List = new LinkedList<string>();
+
+
+        //LinkedList<string> url_List = new LinkedList<string>();
+        List url_List = new List();
         private bool getUrl = true;
 
         public bool Validate(string url)
@@ -53,7 +57,7 @@ namespace Trinh_duyet
                     //webBrowser1.Url = new Uri(url);
                     WebBrowser web = (WebBrowser)selected.Controls["webBrowser1"];
                     web.Url = new Uri(url);
-                    
+                   // webBrowser1_DocumentCompleted(sender, e);
                 }
                 else
                 {
@@ -70,15 +74,15 @@ namespace Trinh_duyet
             //LinkedListNode<string> currentUrl = url_List.First;
             var selected = tabControl.SelectedTab;
             string url = FormatUrl(tbxUrl.Text.Trim());
-            LinkedListNode<string> currentUrl = url_List.FindLast(selected.Tag + " " + url);
-            if (currentUrl.Next == null)
+            Node_Url currentUrl = url_List.FindLast(selected.Tag + " " + url);
+            if (currentUrl.next == null)
             {
                 MessageBox.Show("The forward URL does not exist", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                LinkedListNode<string> nextUrl = currentUrl.Next;
-                string[] url_details = nextUrl.Value.Split(' ');
+                Node_Url nextUrl = currentUrl.next;
+                string[] url_details = nextUrl.url.Split(' ');
                 webBrowser1.Url = new Uri(url_details[1]);
                 tbxUrl.Text = url_details[1];
                 webBrowser1_DocumentCompleted(sender, e);
@@ -96,6 +100,7 @@ namespace Trinh_duyet
                 WebBrowser web = (WebBrowser)selected.Controls["webBrowser1"];
                 web.Url = new Uri(url);
                 url_List.AddLast(selected.Tag + " " + url);
+                //webBrowser1_DocumentCompleted(sender, e);
                 //selected.Tag = url;
             }
             else
@@ -110,15 +115,15 @@ namespace Trinh_duyet
             //LinkedListNode<string> currentUrl = url_List.Last;
             var selected = tabControl.SelectedTab;
             string url = FormatUrl(tbxUrl.Text.Trim());
-            LinkedListNode<string> currentUrl = url_List.FindLast(selected.Tag + " " + url);
-            if (currentUrl.Previous == null)
+            Node_Url currentUrl = url_List.FindLast(selected.Tag + " " + url);
+            if (currentUrl.prev == null)
             {
                 MessageBox.Show("The previous URL does not exist", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                LinkedListNode<string> prevUrl = currentUrl.Previous;
-                string[] url_details = prevUrl.Value.Split(' ');
+                Node_Url prevUrl = currentUrl.prev;
+                string[] url_details = prevUrl.url.Split(' ');
                 webBrowser1.Url = new Uri(url_details[1]);
                 tbxUrl.Text = url_details[1];
                 webBrowser1_DocumentCompleted(sender, e);
@@ -159,8 +164,8 @@ namespace Trinh_duyet
         {
             if (tabControl.TabPages.Count == 1)
             {
-                //tabControl.TabPages.Clear();
-                tabControl.TabPages.RemoveAt(tabControl.SelectedIndex);
+                tabControl.TabPages.Clear();
+                //tabControl.TabPages.RemoveAt(tabControl.SelectedIndex);
                 newTab();
             }
             else
@@ -323,9 +328,11 @@ namespace Trinh_duyet
                 WebBrowser web = GetCurrentBrowser();
                 string url = web.Url.ToString();
                 var selected = tabControl.SelectedTab;
+                //if (url_List != null)
+                //    MessageBox.Show(url_List.head.url);
                 url_List.AddLast(selected.Tag + " " + url);
                 tbxUrl.Text = url;
-                selected.Text = web.Document.Title;
+                webBrowser1_DocumentCompleted(sender, e);
             }
         }
 
@@ -337,9 +344,11 @@ namespace Trinh_duyet
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             toolStripButton1.DropDownItems.Clear();
-            foreach (string i in url_List)
+            Node_Url i = url_List.head;
+            while (i != null)
             {
-                toolStripButton1.DropDownItems.Add(i);
+                toolStripButton1.DropDownItems.Add(i.url);
+                i = i.next;
             }
         }
 

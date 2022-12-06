@@ -39,9 +39,9 @@
             this.btnSearch = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.tabControl = new System.Windows.Forms.TabControl();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.tabPage1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -83,7 +83,7 @@
             this.toolStripButton2});
             this.toolStrip1.Location = new System.Drawing.Point(3, 3);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(786, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(786, 31);
             this.toolStrip1.TabIndex = 4;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -93,7 +93,7 @@
             this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
             this.btnBack.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(29, 24);
+            this.btnBack.Size = new System.Drawing.Size(29, 28);
             this.btnBack.Text = "toolStripButton1";
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
@@ -103,7 +103,7 @@
             this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
             this.btnNext.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(29, 24);
+            this.btnNext.Size = new System.Drawing.Size(29, 28);
             this.btnNext.Text = "toolStripButton2";
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
@@ -113,7 +113,7 @@
             this.btnReload.Image = ((System.Drawing.Image)(resources.GetObject("btnReload.Image")));
             this.btnReload.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnReload.Name = "btnReload";
-            this.btnReload.Size = new System.Drawing.Size(29, 24);
+            this.btnReload.Size = new System.Drawing.Size(29, 28);
             this.btnReload.Text = "toolStripButton3";
             this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
@@ -134,7 +134,7 @@
             this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
             this.btnSearch.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(29, 24);
+            this.btnSearch.Size = new System.Drawing.Size(29, 28);
             this.btnSearch.Text = "toolStripButton4";
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
@@ -146,7 +146,7 @@
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(34, 24);
+            this.toolStripButton1.Size = new System.Drawing.Size(34, 28);
             this.toolStripButton1.Text = "toolStripButton1";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
@@ -154,6 +154,16 @@
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(83, 26);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(29, 28);
+            this.toolStripButton2.Text = "toolStripButton2";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // webBrowser1
             // 
@@ -177,16 +187,6 @@
             this.tabControl.TabIndex = 3;
             this.tabControl.SelectedIndexChanged += new System.EventHandler(this.tabControl_SelectedIndexChanged);
             this.tabControl.Click += new System.EventHandler(this.tabControl_Click);
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(29, 24);
-            this.toolStripButton2.Text = "toolStripButton2";
-            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // Form1
             // 

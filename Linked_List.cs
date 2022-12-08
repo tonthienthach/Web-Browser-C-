@@ -33,35 +33,41 @@ namespace Trinh_duyet
     class List
     {
         public Node_Url head;
-        public Node_Url tail;
+
         public List()
         {
             this.head = null;
-            this.tail = null;
+
         }
         public void AddLast(string x)
         {
             Node_Url newNode = new Node_Url(x);
-            if (this.head == null && this.tail == null) //Nếu danh sách hiện tại rỗng
+            if (this.head == null) //Nếu danh sách hiện tại rỗng
             {
                 //Node l = new Node();
-                
+
                 this.head = newNode;
-                this.tail = newNode;
+
             }
             else //Danh sách có phần tử thì thêm vào cuối danh sách
             {
-                Node_Url p = this.tail; //Gán p bằng node đầu danh sách là node l
-                //while (p.next != null) //Thực hiện next tới để tìm về cuối danh sách
-                //{
-                //    p = p.next;
-                //}
+                Node_Url p = this.head; //Gán p bằng node cuối danh sách là node l
+                while (p.next != null) //Thực hiện next tới để tìm về cuối danh sách
+                {
+                    p = p.next;
+                }
                 //Tạo node mới, gán giá trị và trỏ next của node cuối về node mới.
                 //Node_Url newnode = new Node_Url();
                 //newnode.url = x;
+
                 newNode.next = null;
                 p.next = newNode;
                 newNode.prev = p;
+
+                //if (this.head.next != null)
+                //{
+                //    Console.WriteLine(this.head.next.url);
+                //}
             }
         }
 
@@ -71,9 +77,10 @@ namespace Trinh_duyet
             Node_Url result = new Node_Url();
             while (p != null)
             {
-                if(p.url == x)
+                if (p.url == x)
                 {
                     result = p;
+                    p = p.next;
                 }
                 else
                 {
@@ -82,6 +89,21 @@ namespace Trinh_duyet
             }
             return result;
         }
+        //public Node_Url FindPrevLast(string x, List url_List)
+        //{
+        //    List tempo_List = new List();
+        //    Node_Url i = url_List.head;
+        //    bool m = false;
+        //    while (i != null)
+        //    {
+        //        m = i.url.Contains(selected.Tag + " ");
+        //        if (m)
+        //        {
+        //            tempo_List.AddLast(i.url);
+        //        }
+        //        i = i.next;
+        //    }
+        //}
     }
 }
 

@@ -40,7 +40,7 @@
             this.toolStripButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.Browser0 = new System.Windows.Forms.WebBrowser();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -61,7 +61,7 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.toolStrip1);
-            this.tabPage1.Controls.Add(this.webBrowser1);
+            this.tabPage1.Controls.Add(this.Browser0);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -83,7 +83,7 @@
             this.toolStripButton2});
             this.toolStrip1.Location = new System.Drawing.Point(3, 3);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(786, 31);
+            this.toolStrip1.Size = new System.Drawing.Size(786, 27);
             this.toolStrip1.TabIndex = 4;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -93,7 +93,7 @@
             this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
             this.btnBack.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(29, 28);
+            this.btnBack.Size = new System.Drawing.Size(29, 24);
             this.btnBack.Text = "toolStripButton1";
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
@@ -103,7 +103,7 @@
             this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
             this.btnNext.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(29, 28);
+            this.btnNext.Size = new System.Drawing.Size(29, 24);
             this.btnNext.Text = "toolStripButton2";
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
@@ -113,7 +113,7 @@
             this.btnReload.Image = ((System.Drawing.Image)(resources.GetObject("btnReload.Image")));
             this.btnReload.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnReload.Name = "btnReload";
-            this.btnReload.Size = new System.Drawing.Size(29, 28);
+            this.btnReload.Size = new System.Drawing.Size(29, 24);
             this.btnReload.Text = "toolStripButton3";
             this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
@@ -134,7 +134,7 @@
             this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
             this.btnSearch.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(29, 28);
+            this.btnSearch.Size = new System.Drawing.Size(29, 24);
             this.btnSearch.Text = "toolStripButton4";
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
@@ -146,14 +146,14 @@
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(34, 28);
+            this.toolStripButton1.Size = new System.Drawing.Size(34, 24);
             this.toolStripButton1.Text = "toolStripButton1";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(83, 26);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             // 
             // toolStripButton2
             // 
@@ -161,19 +161,19 @@
             this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(29, 28);
+            this.toolStripButton2.Size = new System.Drawing.Size(29, 24);
             this.toolStripButton2.Text = "toolStripButton2";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
-            // webBrowser1
+            // Browser0
             // 
-            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webBrowser1.Location = new System.Drawing.Point(3, 3);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(786, 415);
-            this.webBrowser1.TabIndex = 2;
-            this.webBrowser1.Navigated += new System.Windows.Forms.WebBrowserNavigatedEventHandler(this.webBrowser1_Navigated);
+            this.Browser0.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Browser0.Location = new System.Drawing.Point(3, 3);
+            this.Browser0.MinimumSize = new System.Drawing.Size(20, 20);
+            this.Browser0.Name = "Browser0";
+            this.Browser0.Size = new System.Drawing.Size(786, 415);
+            this.Browser0.TabIndex = 2;
+            this.Browser0.Navigated += new System.Windows.Forms.WebBrowserNavigatedEventHandler(this.webBrowser1_Navigated);
             // 
             // tabControl
             // 
@@ -216,7 +216,7 @@
         private System.Windows.Forms.ToolStripButton btnReload;
         private System.Windows.Forms.ToolStripTextBox tbxUrl;
         private System.Windows.Forms.ToolStripButton btnSearch;
-        private System.Windows.Forms.WebBrowser webBrowser1;
+        private System.Windows.Forms.WebBrowser Browser0;
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.ToolStripDropDownButton toolStripButton1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;

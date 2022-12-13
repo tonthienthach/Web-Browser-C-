@@ -160,7 +160,7 @@ namespace Trinh_duyet
         {
             getUrl = false;
             var selected = tabControl.SelectedTab;
-            WebBrowser web = (WebBrowser)selected.Controls["webBrowser1"];
+            WebBrowser web = (WebBrowser)selected.Controls[selected.Tag + ""];
             string url = tbxUrl.Text.Trim();
             web.Refresh();
             webBrowser1_DocumentCompleted(sender, e);
